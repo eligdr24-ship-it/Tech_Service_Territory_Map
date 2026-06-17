@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tech Territory Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="left-panel">
+      <div class="brand"><div class="logo">⌂</div><div><h1>Tech Territory Map</h1><p>Coverage planner</p></div></div>
+      <button id="addTech" class="primary full">+ Add Tech</button>
+      <section><h2>Technicians</h2><div id="techList" class="tech-list"></div></section>
+      <section class="card"><h2>Map Layers</h2>
+        <label><input id="toggleLabels" type="checkbox" checked> Show territory labels</label>
+        <label><input id="toggleOverlap" type="checkbox" checked> Allow overlap</label>
+      </section>
+      <section class="card small"><h2>How to use</h2><p>Choose a tech, click Draw Territory, then draw lines around the service area. Click the first point to close and save.</p></section>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="search"><input id="searchBox" placeholder="Search by ZIP, City, State..."/><button id="searchBtn">⌕</button></div>
+        <div class="actions"><button id="selectMode">Select</button><button id="drawMode" class="active">✎ Draw Territory</button><button id="exportBtn">Export CSV</button><button id="saveBtn" class="primary">Save Changes</button></div>
+      </header>
+      <div id="map"></div>
+      <div class="table-wrap">
+        <div class="table-title"><strong>Territories</strong><span id="territoryCount">0</span></div>
+        <table><thead><tr><th>Name</th><th>Technician</th><th>Type</th><th>Notes</th><th>Actions</th></tr></thead><tbody id="territoryTable"></tbody></table>
+      </div>
+    </main>
+
+    <aside class="right-panel">
+      <section class="card"><h2>Selected Tech</h2><select id="techSelect"></select><p class="muted">New territories use this technician color.</p></section>
+      <section class="card"><h2>Territory Info</h2><input id="territoryName" placeholder="Territory name"/><textarea id="territoryNotes" placeholder="Notes: schedule, ZIPs, emergency only..."></textarea><button id="applyInfo" class="primary full">Apply to selected</button><button id="deleteSelected" class="danger full">Delete selected</button></section>
+      <section class="card"><h2>Quick Areas</h2><button data-city="New York" class="quick">New York</button><button data-city="Philadelphia" class="quick">Philadelphia</button><button data-city="Dallas" class="quick">Dallas</button><button data-city="Los Angeles" class="quick">Los Angeles</button></section>
+    </aside>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
