@@ -1,47 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tech Territory Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="app">
-    <aside class="left-panel">
-      <div class="brand"><div class="logo">⌂</div><div><h1>Tech Territory Map</h1><p>Coverage planner</p></div></div>
-      <button id="addTech" class="primary full">+ Add Tech</button>
-      <section><h2>Technicians</h2><div id="techList" class="tech-list"></div></section>
-      <section class="card"><h2>Map Layers</h2>
-        <label><input id="toggleLabels" type="checkbox" checked> Show territory labels</label>
-        <label><input id="toggleOverlap" type="checkbox" checked> Allow overlap</label>
-      </section>
-      <section class="card small"><h2>How to use</h2><p>Choose a tech, click Draw Territory, then draw lines around the service area. Click the first point to close and save.</p></section>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <div class="search"><input id="searchBox" placeholder="Search by ZIP, City, State..."/><button id="searchBtn">⌕</button></div>
-        <div class="actions"><button id="selectMode">Select</button><button id="drawMode" class="active">✎ Draw Territory</button><button id="exportBtn">Export CSV</button><button id="saveBtn" class="primary">Save Changes</button></div>
-      </header>
-      <div id="map"></div>
-      <div class="table-wrap">
-        <div class="table-title"><strong>Territories</strong><span id="territoryCount">0</span></div>
-        <table><thead><tr><th>Name</th><th>Technician</th><th>Type</th><th>Notes</th><th>Actions</th></tr></thead><tbody id="territoryTable"></tbody></table>
-      </div>
-    </main>
-
-    <aside class="right-panel">
-      <section class="card"><h2>Selected Tech</h2><select id="techSelect"></select><p class="muted">New territories use this technician color.</p></section>
-      <section class="card"><h2>Territory Info</h2><input id="territoryName" placeholder="Territory name"/><textarea id="territoryNotes" placeholder="Notes: schedule, ZIPs, emergency only..."></textarea><button id="applyInfo" class="primary full">Apply to selected</button><button id="deleteSelected" class="danger full">Delete selected</button></section>
-      <section class="card"><h2>Quick Areas</h2><button data-city="New York" class="quick">New York</button><button data-city="Philadelphia" class="quick">Philadelphia</button><button data-city="Dallas" class="quick">Dallas</button><button data-city="Los Angeles" class="quick">Los Angeles</button></section>
-    </aside>
-  </div>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tech Territory Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"><link rel="stylesheet" href="style.css">
+</head><body><div class="app">
+<aside class="sidebar"><div class="brand"><div class="logo">⌂</div><div><h1>Tech Territory Map</h1><p>Coverage Management</p></div><button id="mobileClose" class="ghost mobile-only">×</button></div>
+<nav><button class="nav active" data-panel="dashboard">▦ Map Dashboard</button><button class="nav" data-panel="techs">👥 Technicians</button><button class="nav" data-panel="territories">🗺 Territories</button><button class="nav" data-panel="states">▤ States</button><button class="nav" data-panel="priority">☷ Priority Rules</button><button class="nav" data-panel="settings">⚙ Settings</button></nav>
+<section class="state-menu"><div class="section-title">States / working areas <button id="addStateBtn">+</button></div><div id="statesList"></div></section>
+<section class="mini-card"><h3>Working Areas View</h3><p id="workingSummary">Showing active states</p><button id="editWorkingStates">Edit Working States</button></section></aside>
+<main><header class="topbar"><button id="menuBtn" class="mobile-only icon">☰</button><div class="search"><input id="searchInput" placeholder="Search by ZIP, City, State, Area..."><button id="searchBtn">⌕</button></div><select id="techFilter"><option value="all">All Technicians</option></select><button id="fitBtn">◎ Fit to Working Areas</button><button id="resetBtn">↻ Reset View</button><button id="addBtn" class="primary">＋ Add</button><div class="admin">AD <span>Admin</span></div></header>
+<div class="workspace"><section class="map-wrap"><div class="toolstrip"><button id="selectBtn">Select</button><button id="drawBtn" class="primary small">✎ Draw Territory</button><button id="editBtn">Edit</button><button id="deleteBtn">Delete</button><button id="undoBtn">Undo</button><button id="exportBtn">Export</button></div><div id="map"></div><div class="legend" id="legend"></div></section>
+<aside class="rightpanel"><div class="tabs"><button class="tab active" data-tab="searchTab">Search</button><button class="tab" data-tab="detailsTab">Area Details</button></div><div id="searchTab" class="tabpage active"><div class="row"><input id="sideSearch" placeholder="11230 / Brooklyn"><button id="sideSearchBtn">⌕</button></div><div id="searchResult" class="card muted">Search a ZIP, city, or area to see coverage and tech priority.</div><h3>Quick Jump</h3><div class="quick"><button data-q="New York, NY">New York</button><button data-q="New Jersey">New Jersey</button><button data-q="Philadelphia, PA">Philadelphia</button><button data-q="Wilmington, DE">Wilmington</button><button data-q="Atlanta, GA">Atlanta</button></div></div><div id="detailsTab" class="tabpage"><div id="detailsBox" class="card muted">Select a territory on the map.</div></div></aside></div>
+<section class="tablebar"><div class="table-head"><h2>Territories <span id="territoryCount"></span></h2><input id="tableSearch" placeholder="Search territories..."></div><div class="table-scroll"><table><thead><tr><th>Name</th><th>State</th><th>Technician(s)</th><th>Priority</th><th>Type</th><th>Actions</th></tr></thead><tbody id="territoryTable"></tbody></table></div></section></main></div>
+<dialog id="modal"><form method="dialog" id="modalForm"><h2 id="modalTitle"></h2><div id="modalBody"></div><menu><button value="cancel">Cancel</button><button id="modalSave" value="default" class="primary">Save</button></menu></form></dialog>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script><script src="app.js"></script></body></html>

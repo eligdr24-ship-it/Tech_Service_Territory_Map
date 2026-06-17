@@ -1,1 +1,9 @@
-{"scripts":{"start":"node server.js"},"dependencies":{"express":"^4.18.2"},"engines":{"node":">=18"},"name":"tech-territory-map","version":"1.0.0","private":true}
+{
+  "name": "tech-territory-map-v2",
+  "version": "2.0.0",
+  "description": "Technician territory mapping dashboard with drawing, search, priority coverage and responsive UI",
+  "main": "server.js",
+  "scripts": {"start": "node server.js"},
+  "dependencies": {"express": "^4.19.2"},
+  "engines": {"node": ">=18"}
+}
