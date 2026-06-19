@@ -1,80 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Territory Map Pro</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="app">
-    <aside id="side" class="sidebar">
-      <div class="brand">
-        <div class="logo">TM</div>
-        <div><h1>Tech Map Pro</h1><p>Apple-style territory control</p></div>
-      </div>
-
-      <nav class="sideNav">
-        <button class="navBtn active" data-view="overview">1. Map Overview</button>
-        <button class="navBtn" data-view="groups">2. Tech Groups</button>
-        <button class="navBtn" data-view="areas">3. Tech Areas</button>
-      </nav>
-
-      <section id="overview" class="view active">
-        <div class="glass searchMini"><input id="sideSearch" placeholder="ZIP, city, county, state..."/><button id="sideSearchBtn">Search</button></div>
-        <div id="searchResult" class="result hidden"></div>
-        <div class="statGrid"><div><b id="statAreas">0</b><span>Areas</span></div><div><b id="statTechs">0</b><span>Techs</span></div><div><b id="statStates">0</b><span>States</span></div></div>
-        <h2>Working States</h2><div id="stateList"></div>
-        <button id="addStateBtn" class="wide">+ Add / Edit State Info</button>
-        <h2>Quick Actions</h2>
-        <button id="fitBtn" class="wide">Fit to Working Areas</button>
-        <button id="streetBtn" class="wide">Street Map</button>
-        <button id="satBtn" class="wide">Satellite Map</button>
-        <button id="exportJsonBtn" class="wide">Export Backup JSON</button>
-        <button id="exportCsvBtn" class="wide">Export Areas CSV</button>
-        <label class="file wide">Import Backup JSON<input id="importJson" type="file" accept=".json"/></label>
-        <button id="resetDemoBtn" class="wide danger">Reset Demo Data</button>
-        <h2>Activity Log</h2><div id="activityLog"></div>
-      </section>
-
-      <section id="groups" class="view">
-        <div class="sectionHead"><h2>Tech Groups</h2><button id="addGroupBtn">+ Group</button></div>
-        <div id="groupList"></div>
-        <div class="sectionHead"><h2>Technicians</h2><button id="addTechBtn">+ Tech</button></div>
-        <div id="techList"></div>
-      </section>
-
-      <section id="areas" class="view">
-        <div class="sectionHead"><h2>Tech Areas</h2><button id="newDrawBtn" class="primary">Draw</button></div>
-        <div class="hint">Select an area on the map to edit, delete, duplicate, smooth, or change priority.</div>
-        <div id="territoryList"></div>
-      </section>
-    </aside>
-
-    <main class="main">
-      <header class="topbar">
-        <button id="mobileMenu">☰</button>
-        <div class="topSearch"><input id="topSearch" placeholder="Search ZIP, city, county, address..."/><button id="topSearchBtn">Search</button></div>
-        <div class="actions"><button id="undoBtn">Undo</button><button id="editMapBtn">Edit Points</button><button id="smoothBtn">Smooth</button><button id="deleteSelectedBtn" class="danger">Delete</button></div>
-      </header>
-      <div id="map"></div>
-      <div id="homeSearch" class="homeSearch">
-        <div class="homeCard">
-          <div class="homeLogo">Tech Territory Map</div>
-          <div class="googleSearch"><span>⌕</span><input id="heroSearch" placeholder="Search ZIP, city, county, state, address..."/><button id="heroBtn">Search</button></div>
-          <p>Find coverage, tech priority, and working areas instantly.</p>
-          <div class="chips"><button>11230</button><button>Brooklyn</button><button>North NJ</button><button>Atlanta</button></div>
-        </div>
-      </div>
-      <div class="bottomCard"><div><b id="selectedTitle">No area selected</b><p id="selectedInfo">Search or select a colored territory to manage coverage.</p></div><button id="editSelectedBtn">Edit Selected</button></div>
-    </main>
-  </div>
-
-  <div id="modal" class="modal hidden"><div class="modalBox"><div class="modalHead"><h2 id="modalTitle">Edit</h2><button id="closeModal">×</button></div><div id="modalBody"></div></div></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Tech Territory Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="style.css"/></head><body>
+<div id="start" class="start"><div class="hero"><div class="brand">Tech Territory Map</div><h1>Find coverage fast</h1><p>Search ZIP, city, state, or territory name.</p><div class="search"><span>⌕</span><input id="homeSearch" placeholder="Search 11230, Brooklyn, NJ, North Jersey..."/><button id="homeBtn">Search</button></div><button id="openDash" class="ghost">Open dashboard</button></div></div>
+<div id="app" class="app hidden">
+<aside class="left"><div class="logo">⌖ <b>Territory Pro</b></div><button class="nav active" data-tab="overview">1. Map Overview</button><button class="nav" data-tab="groups">2. Tech Groups</button><button class="nav" data-tab="areas">3. Tech Areas</button><button class="nav" data-tab="settings">States: NY NJ DE PA GA</button><div class="small">All changes auto-save in this browser.</div></aside>
+<main class="main"><div class="top"><div class="search mini"><span>⌕</span><input id="mapSearch" placeholder="Search ZIP, city, area..."/><button id="mapBtn">Search</button></div><button id="fitBtn">Fit Areas</button><button id="drawBtn">+ Draw Area</button><button id="finishBtn" class="hidden">Finish</button><button id="cancelDraw" class="hidden">Cancel</button></div><div id="map"></div></main>
+<aside class="right"><div id="panel"></div></aside>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="app.js"></script></body></html>
