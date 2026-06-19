@@ -1,34 +1,37 @@
-# Tech Territory Map Google v7
+# Tech Territory Map Leaflet v8
 
-Google Maps version of the technician territory map.
+Google Maps has been removed. This version uses **Leaflet + OpenStreetMap**, so no Google API key or billing is needed.
 
-## Features
-- Google Maps source
-- Google-style start page search bar
-- Search by ZIP, city, address, state, or territory name
+## Main Features
+- Free OpenStreetMap/Leaflet map source
+- Google-style start search for ZIP, city, state, or area name
 - Search archive + New Search button
+- Apple-style dashboard
+- Side menu:
+  1. Map Overview
+  2. Tech Groups
+  3. Tech Areas
+  4. States: NY, NJ, DE, PA, GA
 - Colored smooth/modern territory areas
-- Click area to auto-zoom and open side info panel
-- Add/edit/delete tech groups
-- Add/edit/delete/duplicate tech areas
-- Draw new area on the map
-- Edit territory points by dragging markers
-- Multi-tech group priority per area
-- Auto-fit map to active working areas
-- Responsive desktop/mobile Apple-style design
+- Click territory = auto zoom + side info panel
+- Add/Edit/Delete tech groups
+- Add/Edit/Delete/Duplicate territories
+- Edit territory points by dragging map points
+- Add/remove points from territory
+- Area info panel with group name, priority list, color, notes
+- Responsive desktop/mobile layout
+- Data saves automatically in browser localStorage
 
-## Render setup
-1. Upload this project to GitHub.
-2. Create a Render Web Service.
-3. Build command: `npm install`
-4. Start command: `npm start`
-5. Add Environment Variable:
-   - `GOOGLE_MAPS_API_KEY=your_google_maps_api_key`
+## Run Locally
+```bash
+npm install
+npm start
+```
+Then open `http://localhost:3000`.
 
-## Google Cloud API requirements
-Enable these APIs for the key:
-- Maps JavaScript API
-- Geocoding API
-- Places API
+## Render Deploy
+- Build command: `npm install`
+- Start command: `npm start`
 
-For production, restrict the API key by domain in Google Cloud.
+## Notes
+This is a simple version focused on colored areas and tech group names. It does not require Google Maps API.
