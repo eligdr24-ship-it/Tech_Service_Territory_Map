@@ -1,22 +1,34 @@
-# Tech Territory Map Simple v5
+# Tech Territory Map Google v7
 
-Simple Render/GitHub-ready app.
+Google Maps version of the technician territory map.
 
 ## Features
-- Google-style start search for ZIP/city/state/area
-- Apple-style dashboard
-- Side menu: Map Overview, Tech Groups, Tech Areas
-- Colored custom areas
-- Click area = auto zoom + open info panel
-- Area info panel with tech group, notes, color, edit/delete
-- Add/edit/delete tech groups and areas
-- Smooth modern rounded territory shapes
-- Data saved in browser localStorage
+- Google Maps source
+- Google-style start page search bar
+- Search by ZIP, city, address, state, or territory name
+- Search archive + New Search button
+- Colored smooth/modern territory areas
+- Click area to auto-zoom and open side info panel
+- Add/edit/delete tech groups
+- Add/edit/delete/duplicate tech areas
+- Draw new area on the map
+- Edit territory points by dragging markers
+- Multi-tech group priority per area
+- Auto-fit map to active working areas
+- Responsive desktop/mobile Apple-style design
 
-## Run locally
-npm start
-open http://localhost:3000
+## Render setup
+1. Upload this project to GitHub.
+2. Create a Render Web Service.
+3. Build command: `npm install`
+4. Start command: `npm start`
+5. Add Environment Variable:
+   - `GOOGLE_MAPS_API_KEY=your_google_maps_api_key`
 
-## Render
-Build command: leave empty or `npm install`
-Start command: `npm start`
+## Google Cloud API requirements
+Enable these APIs for the key:
+- Maps JavaScript API
+- Geocoding API
+- Places API
+
+For production, restrict the API key by domain in Google Cloud.

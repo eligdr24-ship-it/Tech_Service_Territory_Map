@@ -1,10 +1,21 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Tech Territory Map</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<link rel="stylesheet" href="style.css"/></head><body>
-<div id="start" class="start"><div class="hero"><div class="brand">Tech Territory Map</div><h1>Find coverage fast</h1><p>Search ZIP, city, state, or territory name.</p><div class="search"><span>⌕</span><input id="homeSearch" placeholder="Search 11230, Brooklyn, NJ, North Jersey..."/><button id="homeBtn">Search</button></div><button id="openDash" class="ghost">Open dashboard</button></div></div>
-<div id="app" class="app hidden">
-<aside class="left"><div class="logo">⌖ <b>Territory Pro</b></div><button class="nav active" data-tab="overview">1. Map Overview</button><button class="nav" data-tab="groups">2. Tech Groups</button><button class="nav" data-tab="areas">3. Tech Areas</button><button class="nav" data-tab="settings">States: NY NJ DE PA GA</button><div class="small">All changes auto-save in this browser.</div></aside>
-<main class="main"><div class="top"><div class="search mini"><span>⌕</span><input id="mapSearch" placeholder="Search ZIP, city, area..."/><button id="mapBtn">Search</button></div><button id="fitBtn">Fit Areas</button><button id="drawBtn">+ Draw Area</button><button id="finishBtn" class="hidden">Finish</button><button id="cancelDraw" class="hidden">Cancel</button></div><div id="map"></div></main>
-<aside class="right"><div id="panel"></div></aside>
-</div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="app.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tech Territory Map Google v7</title><link rel="stylesheet" href="/style.css"></head><body>
+<section id="start" class="start">
+  <div class="hero"><div class="badge">Tech Territory Map</div><h1>Search your coverage</h1><p>Enter ZIP, city, address, territory, or state.</p>
+    <div class="googleSearch"><span>⌕</span><input id="homeSearch" placeholder="Search ZIP, city, address..."><button id="homeBtn">Search</button></div>
+    <div class="heroActions"><button id="openDash">Open Dashboard</button><button id="homeNewBtn">New Search</button></div>
+    <div id="homeArchive" class="archive"></div>
+  </div>
+</section>
+<section id="app" class="app hidden">
+  <aside class="side"><div class="brand"><b>Territory Pro</b><span>Google Maps v7</span></div>
+    <button class="nav active" data-tab="overview">1. Map Overview</button>
+    <button class="nav" data-tab="groups">2. Tech Groups</button>
+    <button class="nav" data-tab="areas">3. Tech Areas</button>
+    <button class="nav" data-tab="states">States</button>
+  </aside>
+  <main class="main"><header class="top"><div class="searchbar"><span>⌕</span><input id="mapSearch" placeholder="Search ZIP, city, address..."><button id="mapBtn">Search</button><button id="mapNewBtn">New Search</button></div><div class="topBtns"><button id="fitBtn">Fit Areas</button><button id="drawBtn">Draw Area</button><button id="finishBtn" class="hidden">Finish</button><button id="cancelDraw" class="hidden">Cancel</button></div></header>
+    <div class="workspace"><div id="map"></div><aside id="panel" class="panel"></aside></div>
+  </main>
+</section>
+<div id="keyModal" class="modal hidden"><div><h2>Google Maps API key needed</h2><p>Add <b>GOOGLE_MAPS_API_KEY</b> in Render environment variables, then redeploy. The app is ready, but Google Maps needs your key.</p></div></div>
+<script src="/config.js"></script><script src="/app.js"></script></body></html>
