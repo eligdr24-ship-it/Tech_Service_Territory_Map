@@ -1,11 +1,7 @@
 {
-  "name": "tech-territory-map-leaflet-v19-mobile-search-fix",
-  "version": "19.0.0",
+  "name": "tech-territory-map-leaflet-v20-search-priority",
+  "version": "20.0.0",
   "private": true,
-  "scripts": {
-    "start": "node server.js"
-  },
-  "engines": {
-    "node": ">=18"
-  }
+  "scripts": {"start": "node server.js"},
+  "engines": {"node": ">=18"}
 }

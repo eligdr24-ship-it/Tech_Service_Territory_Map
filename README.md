@@ -1,11 +1,10 @@
-# Tech Territory Map Leaflet v19 — Mobile Search Bar Fix
+# Tech Territory Map Leaflet v20 — Search Priority Results
 
 Changes:
-- Fixed mobile admin search area so the input is on its own clean line.
-- Search and New Search buttons are on a separate line with no overlap.
-- Fit Areas and + Draw Area stay on their own row.
-- Improved spacing, sizing, and map height on mobile.
-- No other system behavior changed.
+- Search results now show the covered area and tech groups by priority order.
+- First group is labeled Call first, second Call second, others Call next.
+- Shows contact person, phone, email, WhatsApp link, copy phone, and copy WhatsApp actions.
+- Keeps mobile search fixes and all prior features.
 
 Run:
 ```bash
