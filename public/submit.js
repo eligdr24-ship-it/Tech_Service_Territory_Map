@@ -16,7 +16,7 @@ function undoPointFn(){if(done)return; if(!points.length)return;points.pop();let
 function clearAll(){points=[];markers.forEach(m=>map.removeLayer(m));markers=[];if(poly)map.removeLayer(poly);poly=null;drawing=false;done=false;submitBtn.disabled=true;submitMsg.textContent='Area reset. Click Start to draw a new area.';}
 function finishArea(){ if(points.length<3){alert('Please add at least 3 points before clicking Done.');return} drawing=false; done=true; submitBtn.disabled=false; if(poly)poly.setStyle({fillOpacity:.34,weight:5}); submitMsg.innerHTML='<b>Area completed.</b> You can submit the request now.'; }
 async function submitRequest(e){e.preventDefault(); if(!done||points.length<3){alert('Please draw the coverage area and click Done first.');return}
- const payload={groupName:groupName.value.trim(),contact:contact.value.trim(),phone:phone.value.trim(),email:email.value.trim(),areaName:areaName.value.trim(),color:color.value,notes:notes.value.trim(),points};
+ const payload={groupName:groupName.value.trim(),contact:contact.value.trim(),phone:phone.value.trim(),email:email.value.trim(),whatsapp:whatsapp.value.trim(),areaName:areaName.value.trim(),color:color.value,notes:notes.value.trim(),points};
  submitMsg.textContent='Saving request...';
  const res=await fetch('/api/pending',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
  if(!res.ok){submitMsg.textContent='Could not save. Please check required fields.';return}
