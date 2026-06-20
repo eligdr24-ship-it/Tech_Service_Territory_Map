@@ -1,7 +1,11 @@
 {
-  "name": "tech-territory-map-leaflet-v20-search-priority",
-  "version": "20.0.0",
+  "name": "tech-territory-map-leaflet-v21-whatsapp-priority-fix",
+  "version": "21.0.0",
   "private": true,
-  "scripts": {"start": "node server.js"},
-  "engines": {"node": ">=18"}
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }

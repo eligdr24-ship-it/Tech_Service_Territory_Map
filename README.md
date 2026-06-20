@@ -11,3 +11,9 @@ Run:
 npm install
 npm start
 ```
+
+
+## v21 fix
+- Fixed Call Priority layout when WhatsApp group links are long.
+- WhatsApp links now truncate nicely instead of breaking vertically.
+- Priority cards now keep buttons and contact info aligned on desktop and mobile.
