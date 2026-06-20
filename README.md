@@ -1,4 +1,4 @@
-# Tech Territory Map Leaflet v8
+# Tech Territory Map Leaflet v9
 
 Google Maps has been removed. This version uses **Leaflet + OpenStreetMap**, so no Google API key or billing is needed.
 
@@ -35,3 +35,12 @@ Then open `http://localhost:3000`.
 
 ## Notes
 This is a simple version focused on colored areas and tech group names. It does not require Google Maps API.
+
+
+## v9 Updates
+- Improved mobile layout to fit phone screens better.
+- Removed all names/labels from colored areas on the map.
+- Added nicer priority tech group cards when selecting an area.
+- Added tech group info fields: phone, contact person, email, and notes.
+- Kept search archive and New Search workflow.
+- Improved modern rounded territory styling.
