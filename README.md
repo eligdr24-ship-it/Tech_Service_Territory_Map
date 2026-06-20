@@ -59,3 +59,11 @@ This is a simple version focused on colored areas and tech group names. It does 
 - Widened desktop details panel.
 - Clean stacked pending card layout for desktop and mobile.
 - Smaller mobile menu tabs for better screen fit.
+
+
+## v16 Admin Mobile Responsiveness Fix
+- Admin dashboard mobile layout rebuilt with compact top tabs.
+- Search bar and action buttons are smaller on phones.
+- Map height is reduced on mobile so panels are visible.
+- Tech Groups / Tech Areas / Pending Requests panels now open below the map and scroll into view.
+- No desktop functionality or existing data behavior changed.
