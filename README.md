@@ -1,24 +1,54 @@
-# Tech Territory Map Leaflet v12
+# Tech Territory Map Leaflet v9
 
-Mobile-responsive admin dashboard update.
+Google Maps has been removed. This version uses **Leaflet + OpenStreetMap**, so no Google API key or billing is needed.
 
-## v12 changes
-- Improved Admin Dashboard mobile layout.
-- Map fits phone screens better and no longer gets covered by the info panel.
-- Side menu becomes a sticky horizontal Apple-style menu on mobile.
-- Admin info panel appears below the map on mobile.
-- Buttons and cards are touch-friendly.
-- Tech Coverage Request page updated with Start (Add New Area), Undo Point, Reset, and Done buttons.
-- Removed state selection from the public request page.
-- Submit button is enabled only after the user clicks Done.
+## Main Features
+- Free OpenStreetMap/Leaflet map source
+- Google-style start search for ZIP, city, state, or area name
+- Search archive + New Search button
+- Apple-style dashboard
+- Side menu:
+  1. Map Overview
+  2. Tech Groups
+  3. Tech Areas
+  4. States: NY, NJ, DE, PA, GA
+- Colored smooth/modern territory areas
+- Click territory = auto zoom + side info panel
+- Add/Edit/Delete tech groups
+- Add/Edit/Delete/Duplicate territories
+- Edit territory points by dragging map points
+- Add/remove points from territory
+- Area info panel with group name, priority list, color, notes
+- Responsive desktop/mobile layout
+- Data saves automatically in browser localStorage
 
-## Run
+## Run Locally
 ```bash
 npm install
 npm start
 ```
-Open `http://localhost:3000`.
+Then open `http://localhost:3000`.
 
-## Render
-Build command: `npm install`
-Start command: `npm start`
+## Render Deploy
+- Build command: `npm install`
+- Start command: `npm start`
+
+## Notes
+This is a simple version focused on colored areas and tech group names. It does not require Google Maps API.
+
+
+## v9 Updates
+- Improved mobile layout to fit phone screens better.
+- Removed all names/labels from colored areas on the map.
+- Added nicer priority tech group cards when selecting an area.
+- Added tech group info fields: phone, contact person, email, and notes.
+- Kept search archive and New Search workflow.
+- Improved modern rounded territory styling.
+
+
+## v13 Admin Responsive Fixes
+- Improved mobile layout for Admin Dashboard.
+- Fixed Pending Area Requests header/card wrapping on web and mobile.
+- Added better spacing between + Add Simple Area and Draw on Map buttons.
+- Added responsive button grids for pending request actions.
+- Improved card, side panel, and toolbar behavior on small screens.
