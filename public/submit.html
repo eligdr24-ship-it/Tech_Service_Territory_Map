@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Submit Coverage Area</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/><link rel="stylesheet" href="style.css"/></head><body class="submitBody">
+<div class="submitShell">
+  <section class="submitIntro"><div class="brand">Tech Coverage Request</div><h1>Submit one new coverage area</h1><p>Fill your group info, draw your covered area on the map, and submit for admin approval. After saving, the page resets for a new request.</p></section>
+  <section class="submitGrid">
+    <form id="requestForm" class="submitForm">
+      <h3>Group Info</h3>
+      <input class="field" id="groupName" placeholder="Tech group / company name" required>
+      <input class="field" id="contact" placeholder="Contact person">
+      <input class="field" id="phone" placeholder="Phone number">
+      <input class="field" id="email" placeholder="Email">
+      <select class="field" id="state"><option>NY</option><option>NJ</option><option>DE</option><option>PA</option><option>GA</option></select>
+      <input class="field" id="areaName" placeholder="Coverage area name" required>
+      <input class="field color" type="color" id="color" value="#155eef">
+      <textarea class="field" id="notes" placeholder="Coverage notes, ZIPs, cities, priority details..."></textarea>
+      <div class="btns"><button type="button" id="clearShape" class="btn">Clear Shape</button><button type="submit" class="primary">Submit Request</button></div>
+      <div id="submitMsg" class="muted"></div>
+    </form>
+    <div class="submitMapWrap"><div class="submitToolbar"><b>Draw Coverage Area</b><span>Click map points to create a shape. Use Undo Point if needed.</span><button id="undoPoint" class="btn">Undo Point</button></div><div id="submitMap"></div></div>
+  </section>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="submit.js"></script></body></html>

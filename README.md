@@ -1,46 +1,28 @@
-# Tech Territory Map Leaflet v9
+# Tech Territory Map Leaflet v10 - Public Area Request Page
 
-Google Maps has been removed. This version uses **Leaflet + OpenStreetMap**, so no Google API key or billing is needed.
+## New in v10
+- Added one-page public submission page: `/submit-area`
+- Tech contact can fill group/contact info and draw one new coverage area
+- After submit, the form resets for a new setup
+- Tech cannot view or edit old submissions from this page
+- Admin dashboard has **Pending Requests** menu
+- Admin can preview, approve/add to map, reject, or delete requests
+- Uses Leaflet/OpenStreetMap, no Google Maps API key required
 
-## Main Features
-- Free OpenStreetMap/Leaflet map source
-- Google-style start search for ZIP, city, state, or area name
-- Search archive + New Search button
-- Apple-style dashboard
-- Side menu:
-  1. Map Overview
-  2. Tech Groups
-  3. Tech Areas
-  4. States: NY, NJ, DE, PA, GA
-- Colored smooth/modern territory areas
-- Click territory = auto zoom + side info panel
-- Add/Edit/Delete tech groups
-- Add/Edit/Delete/Duplicate territories
-- Edit territory points by dragging map points
-- Add/remove points from territory
-- Area info panel with group name, priority list, color, notes
-- Responsive desktop/mobile layout
-- Data saves automatically in browser localStorage
-
-## Run Locally
+## Run locally
 ```bash
 npm install
 npm start
 ```
-Then open `http://localhost:3000`.
 
-## Render Deploy
-- Build command: `npm install`
-- Start command: `npm start`
+Open:
+- Admin dashboard: `http://localhost:3000`
+- Public request page: `http://localhost:3000/submit-area`
 
-## Notes
-This is a simple version focused on colored areas and tech group names. It does not require Google Maps API.
+## Render
+Build command: `npm install`
+Start command: `npm start`
 
-
-## v9 Updates
-- Improved mobile layout to fit phone screens better.
-- Removed all names/labels from colored areas on the map.
-- Added nicer priority tech group cards when selecting an area.
-- Added tech group info fields: phone, contact person, email, and notes.
-- Kept search archive and New Search workflow.
-- Improved modern rounded territory styling.
+Optional persistent disk:
+- Mount path: `/data`
+- Environment variable: `DATA_DIR=/data`
