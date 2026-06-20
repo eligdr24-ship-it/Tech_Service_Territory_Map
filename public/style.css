@@ -28,3 +28,74 @@
 .pendingNav{display:flex!important;align-items:center;justify-content:space-between;gap:10px}.navBadge{min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:#ef4444;color:#fff;font-size:11px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(239,68,68,.35);line-height:1}.pendingTopCard{background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid #dbeafe;box-shadow:0 12px 34px rgba(21,94,239,.10)}.pendingTitleBlock{display:flex;align-items:center;gap:12px;min-width:0}.pendingIcon{width:42px;height:42px;border-radius:16px;background:#eef4ff;color:#155eef;display:grid;place-items:center;font-size:20px;flex:0 0 auto}.pendingTopCard h3{margin:0 0 4px;line-height:1.15}.emptyPending{background:#f8fafc;border-style:dashed;text-align:center}.reviewedCard{background:#fbfcff}.requestCard{border-radius:20px;border-left:0;box-shadow:0 10px 26px rgba(16,24,40,.07);overflow:hidden}.requestCard>.row:first-child{background:linear-gradient(180deg,#fff,#f9fafb);border-bottom:1px solid #eef0f4;margin:-16px -16px 12px;padding:14px 16px}.requestCard h3{display:flex;align-items:center;gap:8px;margin:0;min-width:0}.requestCard .btns{margin-top:14px}
 @media(max-width:900px){.left{gap:6px;padding:8px 9px;min-height:54px}.logo{font-size:13px}.nav{font-size:11.5px;padding:8px 9px;border-radius:999px}.pendingNav{gap:6px}.navBadge{min-width:18px;height:18px;font-size:10px;padding:0 5px}.portalLink{font-size:11.5px;padding:8px 10px;border-radius:999px}.pendingTopCard{padding:12px;border-radius:16px}.pendingIcon{width:36px;height:36px;border-radius:13px;font-size:17px}.pendingTitleBlock{align-items:flex-start}.pendingTopCard .btn{width:100%;padding:10px}.requestCard{border-radius:16px}.requestCard>.row:first-child{margin:-12px -12px 10px;padding:12px}.requestCard h3{font-size:16px}.requestCard .infoGrid{grid-template-columns:1fr!important}.requestCard .btns{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px}.requestCard .btns .btn,.requestCard .btns .primary{width:100%;padding:10px 8px;font-size:12px}.reviewedCard>h3{font-size:16px}}
 @media(max-width:520px){.left{min-height:50px;padding:7px 8px}.logo{font-size:12px}.nav{font-size:10.5px;padding:7px 8px}.nav span:first-child{max-width:112px;overflow:hidden;text-overflow:ellipsis}.navBadge{min-width:17px;height:17px;font-size:9.5px}.portalLink{display:none}.top{top:50px}.right{max-height:54dvh}.pendingTopCard{gap:9px}.pendingTitleBlock{gap:9px}.pendingIcon{width:32px;height:32px;border-radius:11px;font-size:15px}.pendingTopCard h3{font-size:17px}.requestCard .btns{grid-template-columns:1fr!important}.status{font-size:10.5px}.requestCard .infoGrid div{padding:8px}.emptyPending{padding:18px 12px}}
+
+/* v15: final Pending Area Requests layout fix */
+@media (min-width: 901px){
+  .app{grid-template-columns:260px minmax(0,1fr) 420px;}
+  .right{padding:22px 20px;}
+}
+.pendingHeader.pendingTopCard{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  align-items:start!important;
+  gap:14px!important;
+  padding:18px!important;
+}
+.pendingTopCard,.pendingTopCard *{
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  hyphens:none!important;
+}
+.pendingTitleBlock{
+  display:grid!important;
+  grid-template-columns:44px minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:12px!important;
+  width:100%!important;
+}
+.pendingTitleBlock h3,
+.pendingTopCard h3{
+  white-space:normal!important;
+  font-size:20px!important;
+  line-height:1.2!important;
+  letter-spacing:-.3px!important;
+  margin:0 0 4px!important;
+  max-width:100%!important;
+}
+.pendingTopCard .muted{
+  line-height:1.35!important;
+  white-space:normal!important;
+  max-width:100%!important;
+}
+.pendingTopCard .btn{
+  width:100%!important;
+  min-height:46px!important;
+  border-radius:16px!important;
+  font-size:14px!important;
+  padding:12px 14px!important;
+}
+.emptyPending,.reviewedCard,.requestCard{
+  word-break:normal!important;
+  overflow-wrap:break-word!important;
+}
+.emptyPending b,.reviewedCard h3{
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  white-space:normal!important;
+}
+@media(max-width:900px){
+  .pendingHeader.pendingTopCard{padding:14px!important;border-radius:18px!important;}
+  .pendingTitleBlock{grid-template-columns:38px minmax(0,1fr)!important;gap:10px!important;}
+  .pendingTopCard h3{font-size:18px!important;}
+  .pendingTopCard .btn{min-height:42px!important;border-radius:14px!important;}
+  .nav{font-size:11px!important;padding:7px 9px!important;}
+  .left{gap:5px!important;}
+}
+@media(max-width:520px){
+  .pendingTitleBlock{grid-template-columns:34px minmax(0,1fr)!important;}
+  .pendingTopCard h3{font-size:17px!important;}
+  .pendingTopCard .muted{font-size:12px!important;}
+  .nav{font-size:10px!important;padding:6px 8px!important;}
+  .nav span:first-child{max-width:96px!important;}
+  .left{min-height:48px!important;padding:6px 7px!important;}
+}
