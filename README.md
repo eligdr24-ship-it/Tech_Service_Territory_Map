@@ -1,21 +1,14 @@
-# Tech Territory Map Leaflet v18 — Mobile Search Line Fix
+# Tech Territory Map Leaflet v19 — Mobile Search Bar Fix
 
-Changes in this version:
-- Mobile admin dashboard only: search box is now on its own full-width line.
-- Search and New Search buttons are moved to a separate line under the input.
-- Fit Areas and + Draw Area are on their own line.
-- Map height adjusted for better phone usability.
-- Desktop layout unchanged.
+Changes:
+- Fixed mobile admin search area so the input is on its own clean line.
+- Search and New Search buttons are on a separate line with no overlap.
+- Fit Areas and + Draw Area stay on their own row.
+- Improved spacing, sizing, and map height on mobile.
+- No other system behavior changed.
 
 Run:
 ```bash
 npm install
 npm start
 ```
-
-
-## v18 Update
-- Added WhatsApp Group field to Tech Group info.
-- WhatsApp link displays in Tech Groups and selected Area priority cards.
-- Added Open WhatsApp and Copy WhatsApp actions.
-- Public coverage request page can include WhatsApp group info for admin approval.

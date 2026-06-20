@@ -1,6 +1,6 @@
 {
-  "name": "tech-territory-map-leaflet-v12-mobile",
-  "version": "12.0.0",
+  "name": "tech-territory-map-leaflet-v19-mobile-search-fix",
+  "version": "19.0.0",
   "private": true,
   "scripts": {
     "start": "node server.js"

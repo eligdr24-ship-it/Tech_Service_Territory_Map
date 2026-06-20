@@ -281,3 +281,109 @@
 .infoGrid a[href*="whatsapp"]::before,
 .infoGrid a[href*="chat.whatsapp.com"]::before{content:'🟢';font-size:11px}
 @media(max-width:760px){.whatsappLink{width:100%;justify-content:center}.infoGrid a[href*="whatsapp"],.infoGrid a[href*="chat.whatsapp.com"]{width:100%;justify-content:center}}
+
+/* v19: final mobile search bar layout fix - no overlap, clean separate lines */
+@media (max-width: 760px){
+  .top{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+    padding:8px!important;
+    align-items:stretch!important;
+    overflow:visible!important;
+  }
+  .top .search.mini{
+    grid-column:1 / -1!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    grid-template-rows:auto auto!important;
+    gap:8px!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    padding:10px!important;
+    border-radius:22px!important;
+    background:#fff!important;
+    border:1px solid #e4e7ec!important;
+    box-shadow:0 6px 18px rgba(16,24,40,.06)!important;
+    position:relative!important;
+    overflow:hidden!important;
+  }
+  .top .search.mini span{
+    display:flex!important;
+    position:absolute!important;
+    left:20px!important;
+    top:21px!important;
+    z-index:2!important;
+    width:18px!important;
+    height:18px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:14px!important;
+    pointer-events:none!important;
+  }
+  .top .search.mini input{
+    grid-column:1 / -1!important;
+    grid-row:1!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:46px!important;
+    padding:0 12px 0 38px!important;
+    margin:0!important;
+    border:1px solid #d0d5dd!important;
+    border-radius:16px!important;
+    background:#fff!important;
+    font-size:16px!important;
+    line-height:46px!important;
+    display:block!important;
+    order:0!important;
+  }
+  .top .search.mini button{
+    grid-row:2!important;
+    width:100%!important;
+    min-width:0!important;
+    height:42px!important;
+    min-height:42px!important;
+    margin:0!important;
+    padding:0 10px!important;
+    border-radius:16px!important;
+    font-size:14px!important;
+    font-weight:800!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    white-space:nowrap!important;
+  }
+  .top .search.mini button:nth-of-type(1){grid-column:1!important;}
+  .top .search.mini button:nth-of-type(2){grid-column:2!important;}
+  .top > button{
+    width:100%!important;
+    height:44px!important;
+    min-height:44px!important;
+    margin:0!important;
+    padding:0 10px!important;
+    border-radius:16px!important;
+    font-size:14px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    white-space:nowrap!important;
+  }
+  #fitBtn{grid-column:1!important;}
+  #drawBtn{grid-column:2!important;}
+  #finishBtn,#cancelDraw{grid-column:auto!important;}
+  #map{
+    height:45dvh!important;
+    min-height:300px!important;
+    max-height:420px!important;
+  }
+}
+@media (max-width:390px){
+  .top{gap:7px!important;padding:7px!important;}
+  .top .search.mini{gap:7px!important;padding:8px!important;border-radius:20px!important;}
+  .top .search.mini input{height:42px!important;line-height:42px!important;font-size:15px!important;padding-left:36px!important;}
+  .top .search.mini span{left:18px!important;top:19px!important;}
+  .top .search.mini button,.top>button{height:40px!important;min-height:40px!important;font-size:13px!important;border-radius:14px!important;}
+  #map{height:42dvh!important;min-height:280px!important;}
+}
