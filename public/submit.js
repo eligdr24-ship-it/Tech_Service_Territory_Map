@@ -215,7 +215,11 @@ async function submitRequest(e){
     phone: phone.value.trim(),
     email: email.value.trim(),
     whatsapp: whatsapp.value.trim(),
+    techCount: techCount.value.trim(),
+    workingHours: workingHours.value.trim(),
     areaName: areaName.value.trim(),
+    coverageArea: areaName.value.trim(),
+    website: website.value.trim(),
     color: color.value,
     notes: notes.value.trim(),
     points

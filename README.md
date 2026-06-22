@@ -1,13 +1,11 @@
-# Tech Territory Map Leaflet v22 — Request Edit Points
+# Tech Territory Map Leaflet v23 — Company Information
 
-Update added to the Tech Coverage Request page:
-- New **Edit Points** button so the tech contact can adjust the coverage area before submitting.
-- New **Add Point** button inside edit mode.
-- Existing points can be dragged to reshape the area.
-- In edit mode, clicking a point allows removal when the polygon still has at least 3 points.
-- Add Point mode inserts a new point into the closest polygon edge.
-- Submission is still locked until the user clicks **Done**.
-- After submit, the request goes to Admin Pending Requests and the page resets.
+Updated the Tech Coverage Request page and Tech Groups cards:
+- Renamed **Group Info** to **Company Information**.
+- Professional field order: Company Name, Primary Contact, Main Phone Number, Email Address, Number of Technicians, Working Hours, WhatsApp Group Link, Coverage Area, Website, Internal Notes.
+- Removed Emergency Service Availability and Services Offered.
+- Kept Edit Points and Add Point tools on the request page.
+- Approved requests carry the new company fields into Tech Groups.
 
 Run:
 ```bash

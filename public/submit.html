@@ -1,18 +1,21 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Submit Coverage Area</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/><link rel="stylesheet" href="style.css"/></head><body class="submitBody">
 <div class="submitShell">
-  <section class="submitIntro"><div class="brand">Tech Coverage Request</div><h1>Submit one new coverage area</h1><p>Fill your group info, draw your covered area on the map, and submit for admin approval. After saving, the page resets for a new request.</p></section>
+  <section class="submitIntro"><div class="brand">Tech Coverage Request</div><h1>Submit one new coverage area</h1><p>Fill your company information, draw your covered area on the map, and submit for admin approval. After saving, the page resets for a new request.</p></section>
   <section class="submitGrid">
     <form id="requestForm" class="submitForm">
-      <h3>Group Info</h3>
-      <input class="field" id="groupName" placeholder="Tech group / company name" required>
-      <input class="field" id="contact" placeholder="Contact person">
-      <input class="field" id="phone" placeholder="Phone number">
-      <input class="field" id="email" placeholder="Email">
-      <input class="field" id="whatsapp" placeholder="WhatsApp group link or group name">
-      <input class="field" id="areaName" placeholder="Coverage area name" required>
-      <input class="field color" type="color" id="color" value="#155eef">
-      <textarea class="field" id="notes" placeholder="Coverage notes, ZIPs, cities, priority details..."></textarea>
+      <h3>🏢 Company Information</h3>
+      <input class="field" id="groupName" placeholder="Company Name" required>
+      <input class="field" id="contact" placeholder="Primary Contact">
+      <input class="field" id="phone" placeholder="Main Phone Number">
+      <input class="field" id="email" placeholder="Email Address">
+      <input class="field" id="techCount" placeholder="Number of Technicians" inputmode="numeric">
+      <input class="field" id="workingHours" placeholder="Working Hours (example: Mon-Fri 7am-7pm, Sat 8am-3pm)">
+      <input class="field" id="whatsapp" placeholder="WhatsApp Group Link">
+      <input class="field" id="areaName" placeholder="Coverage Area" required>
+      <input class="field" id="website" placeholder="Website (optional)">
+      <input class="field color" type="color" id="color" value="#155eef" title="Area Color">
+      <textarea class="field" id="notes" placeholder="Internal Notes"></textarea>
       <div class="btns"><button type="submit" class="primary" id="submitBtn" disabled>Submit Request</button></div>
       <div id="submitMsg" class="muted"></div>
     </form>

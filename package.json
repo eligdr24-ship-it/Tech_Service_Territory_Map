@@ -1,6 +1,6 @@
 {
-  "name": "tech-territory-map-leaflet-v21-whatsapp-priority-fix",
-  "version": "21.0.0",
+  "name": "tech-territory-map-leaflet-v23-company-info",
+  "version": "23.0.0",
   "private": true,
   "scripts": {
     "start": "node server.js"
