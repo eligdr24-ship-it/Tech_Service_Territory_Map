@@ -1,19 +1,16 @@
-# Tech Territory Map Leaflet v20 — Search Priority Results
+# Tech Territory Map Leaflet v22 — Request Edit Points
 
-Changes:
-- Search results now show the covered area and tech groups by priority order.
-- First group is labeled Call first, second Call second, others Call next.
-- Shows contact person, phone, email, WhatsApp link, copy phone, and copy WhatsApp actions.
-- Keeps mobile search fixes and all prior features.
+Update added to the Tech Coverage Request page:
+- New **Edit Points** button so the tech contact can adjust the coverage area before submitting.
+- New **Add Point** button inside edit mode.
+- Existing points can be dragged to reshape the area.
+- In edit mode, clicking a point allows removal when the polygon still has at least 3 points.
+- Add Point mode inserts a new point into the closest polygon edge.
+- Submission is still locked until the user clicks **Done**.
+- After submit, the request goes to Admin Pending Requests and the page resets.
 
 Run:
 ```bash
 npm install
 npm start
 ```
-
-
-## v21 fix
-- Fixed Call Priority layout when WhatsApp group links are long.
-- WhatsApp links now truncate nicely instead of breaking vertically.
-- Priority cards now keep buttons and contact info aligned on desktop and mobile.
